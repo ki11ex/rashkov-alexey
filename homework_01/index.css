@@ -6,61 +6,139 @@
     height: 1000px;
     background-color: beige;
 }
+.main__block {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid darkslategray;
+    background-color: gray;
+    border-radius: 10px;
+    animation: scale 1s ease;
+    padding: 5px;
+}
 
 .main__first-block {
     display: flex;
     justify-content: center;
     align-items: center;
+    scale: 1;
     border-radius: 30px;
-    border: 2px solid darkgreen;
+    border: 2px solid darkslategray;
     width: 50px;
     height: 50px;
-    background-color: darkseagreen;
+    background-color: darkgreen;
     color: darkgreen;
-    transition: transform 700ms ease,
-    background-color 700ms ease,
-    color 700ms ease,
-    border 700ms ease;
-    animation-name: spinning;
+    transition: transform 400ms ease,
+    background-color 400ms ease;
+    animation-name: translatex1;
     animation-duration: 1s;
+    /*animation-delay: 500ms;*/
     animation-timing-function: ease;
 }
 
-.main__first-block-text {
+.main__second-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    border: 2px solid darkslategray;
+    background-color: darkgoldenrod;
+    color: darkgoldenrod;
+    transition: transform 400ms ease,
+    background-color 400ms ease;
+    animation-name: translatex2;
+    animation-duration: 1s;
+    /*animation-delay: 500ms;*/
+    animation-timing-function: ease;
+}
+
+.main__third-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    border: 2px solid darkslategray;
+    background-color: darkred;
+    color: darkred;
+    transition: transform 400ms ease,
+    background-color 400ms ease;
+    animation-name: translatex1;
+    animation-duration: 1s;
+    /*animation-delay: 500ms;*/
+    animation-timing-function: ease;
+}
+
+.main__first-block_smile {
+    transform: translateX(3px) rotate(90deg);
+    font-size: 35px;
+}
+
+.main__second-block_smile {
+     transform: translateX(3px) rotate(90deg);
+    font-size: 35px;
+}
+
+.main__third-block_smile {
     transform: translateX(3px) rotate(90deg);
     font-size: 35px;
 }
 
 .main__first-block:hover {
-    transform: scale(1.5) rotate(90deg);
-    background-color: indianred;
-    color: darkred;
-    border: 2px solid darkred;
+    transform: scale(1.5);
+    background-color: darkseagreen;
     cursor: pointer;
+    border: 2px solid darkgreen;
 }
 
-@keyframes spinning {
+.main__second-block:hover {
+    transform: scale(1.5);
+    background-color: gold;
+    cursor: pointer;
+    border: 2px solid darkgoldenrod;
+}
+
+.main__third-block:hover {
+    transform: scale(1.5);
+    background-color: indianred;
+    cursor: pointer;
+    border: 2px solid darkred;
+}
+
+@keyframes translatex1 {
     from {
-        transform: rotate(0deg) scale(0.2);
+        transform: translatex(0px) scale(1);
     }
-
     50% {
-        transform: rotate(500deg) scale(1.3);
+        transform: translatex(100px) scale(0);
     }
-
     to {
-        transform: rotate(1080deg) scale(1);
+        transform: translatex(0px) scale(1);
     }
 }
 
-.main__second-block {
-    width: 50px;
-    height: 50px;
-    background-color: cyan;
-    position: fixed;
-
+@keyframes translatex2 {
+    from {
+        transform: translatex(0px) scale(1);
+    }
+    50%{
+        transform: translatex(-100px) scale(0);
+    }
+    to {
+        transform: translatex(0px) scale(1);
+    }
 }
 
-.main__second-block_disable {
-    display: none;
+@keyframes scale {
+    from {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    to {
+        transform: scale(1);
+    }
 }
